@@ -1,0 +1,14 @@
+{
+  "network": {
+    "host": "bot.is.awesome",
+    "port": 6340,
+    "https": true,
+    "password": ""
+  },
+  "bot": {
+    "username": "Botched",
+    "nickName": "BotchedClone"
+  },
+  "debug": false,
+  "retryCount": 3
+}

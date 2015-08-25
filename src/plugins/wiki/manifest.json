@@ -1,0 +1,16 @@
+{
+  "name": "Wiki",
+  "version": "1.0",
+  "description": "Does wiki lookups",
+  "usage": "wiki|mwiki <query>",
+
+  "commands": ["wiki", "mwiki"],
+  "permissions": {},
+
+  "config": {
+    "wiki_url_api": "https://en.wikipedia.org/w/api.php?format=json&action=query&list=search&srsearch={query}&continue=&srlimit=1",
+    "wiki_url_slug": "https://en.wikipedia.org/wiki/",
+    "mwiki_url_api": "http://minecraft.gamepedia.com/api.php?format=json&action=query&list=search&srsearch={query}&continue=&srlimit=1",
+    "mwiki_url_slug": "http://minecraft.gamepedia.com/"
+  }
+}

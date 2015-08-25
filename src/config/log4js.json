@@ -1,0 +1,34 @@
+{
+  "appenders": [
+    {
+      "category": "application",
+      "type": "console",
+      "layout": {
+        "type": "pattern",
+        "pattern": "%[%r | %-5p% | %]%m"
+      }
+    },
+    {
+      "category": "chat",
+      "type": "console",
+      "layout": {
+        "type": "pattern",
+        "pattern": "%[%r | IRC   | %]%m"
+      }
+    },
+    {
+      "category": "plugin",
+      "type": "console",
+      "layout": {
+        "type": "pattern",
+        "pattern": "%[%r | PLUGIN| %]%m"
+      }
+    }
+  ],
+
+  "levels": {
+    "application": "INFO",
+    "chat": "TRACE",
+    "plugin": "INFO"
+  }
+}

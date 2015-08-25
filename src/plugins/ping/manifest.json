@@ -1,0 +1,9 @@
+{
+  "name": "Ping",
+  "version": "1.0",
+  "description": "Responds to ping requests",
+  "usage": "ping|pong",
+
+  "commands": ["ping", "pong", "ding", "dong", "sing", "song", "bing", "bong", "biss"],
+  "permissions": {}
+}

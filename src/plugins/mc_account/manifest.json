@@ -1,0 +1,14 @@
+{
+  "name": "MC Account Tools",
+  "version": "1.0",
+  "description": "Tools for Minecraft account stuff",
+  "usage": "\"paid <username>\" or \"names <username>\"",
+
+  "commands": ["paid", "names"],
+  "permissions": {},
+
+  "config": {
+    "paid_url": "https://api.mojang.com/users/profiles/minecraft/{query}",
+    "names_url": "https://api.mojang.com/user/profiles/{query}/names"
+  }
+}

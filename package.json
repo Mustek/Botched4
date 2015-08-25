@@ -1,0 +1,23 @@
+{
+  "name": "botched-four",
+  "version": "4.0.0-a",
+  "description": "IRC Bot made by Mustek",
+  "main": "main.js",
+  "dependencies": {
+    "irc": "^0.3.12",
+    "log4js": "^0.6.26",
+    "oop-module": "^0.0.5",
+    "request": "^2.59.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "bot",
+    "irc",
+    "minecraft"
+  ],
+  "author": "Mustek",
+  "license": "GNU GPL V3"
+}

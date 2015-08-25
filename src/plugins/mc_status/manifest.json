@@ -1,0 +1,13 @@
+{
+  "name": "MC Service Status",
+  "version": "1.0",
+  "description": "Checks the state of the Mojang servers",
+  "usage": "status",
+
+  "commands": ["status"],
+  "permissions": {},
+
+  "config": {
+    "status_url": "http://xpaw.ru/mcstatus/status_reddit.json"
+  }
+}
