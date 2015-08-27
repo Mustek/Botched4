@@ -1,4 +1,4 @@
-// This fixes the open sockets bug found in Botched3
+// This fixes the open sockets bug found in Botched3 by forcing a timeout
 
 var defaults = {
     timeout: 5000,  // 15 seconds
