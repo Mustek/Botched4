@@ -73,6 +73,11 @@ var updateVersion = function () {
     };
 
     var update_channels = function (version, type) {
+        if(releases.release == 'Loading' || releases.snapshot == 'Loading'){
+            return;
+        }
+
+
         var alert_format = global.COLOR.BOLD + global.COLOR.RED + '[VERSION] Minecraft %s %s has been released!' + global.COLOR.RESET;
 
         for (var i = 0; i < config.subscribers.length; i++) {
