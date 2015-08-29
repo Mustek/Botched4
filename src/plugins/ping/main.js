@@ -6,7 +6,6 @@
 //var plugin = null; //Data, includes name, version and description.
 
 var oop = require('oop-module'); // OOP module, makes defining classes easier.
-var util = require('util');
 var _super = oop.extends('../../plugin.class.js'); // Set parent class
 var logger = null;
 

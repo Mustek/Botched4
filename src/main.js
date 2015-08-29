@@ -55,29 +55,6 @@ var rl = readline.createInterface({
     output: process.stdout
 });
 
-/**
- * DEBUG UTILS, REMOVE IN FUNCTIONAL BUILD.
- * Maybe move to its own class?
- **/
-rl.on('line', function (line) {
-    var send = /send/;
-    log.debug("CLI INPUT: " + line);
-    switch (true) {
-        case /con/.test(line):
-            client.connect(3, null);
-            break;
-        case /send/.test(line):
-            client.say('##Mustek', line.replace('send ', ''));
-            break;
-        case /dc/.test(line):
-            client.disconnect();
-            break;
-        default:
-            break;
-    }
-});
-
-
 fs.readFile('config/main.json', function (err, data) {
     if (err && err.code == 'ENOENT') {
         log.error('Could not find main config file at config/main.json');
