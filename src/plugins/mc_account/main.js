@@ -38,10 +38,12 @@ exports.onCommand = function (command, args, data, callback) {
 
                 } else {
                     if (response === null) {
-                        callback(data, util.format("\u000304\u2718\u000f The account %s is not premium.", account));
+                        callback(data, util.format("%s%s\u2718%s The account %s is not premium.", global.COLOR.BOLD,
+                            global.COLOR.RED, global.COLOR.RESET, account));
 
                     } else {
-                        callback(data, util.format("\u000309\u2713\u000f %s | UUID: %s %s", response.name, format_uuid(response.id), (response.legacy === undefined) ? "" : "| Not migrated"));
+                        callback(data, util.format("%s%s\u2713%s %s | UUID: %s %s", global.COLOR.BOLD, global.COLOR.GREEN,
+                            global.COLOR.RESET, response.name, format_uuid(response.id), (response.legacy === undefined) ? "" : "| Not migrated"));
 
                     }
                 }
@@ -75,7 +77,7 @@ exports.onCommand = function (command, args, data, callback) {
                                     if (i == response.length - 1) current = response[i].name;
                                     else old.push(response[i].name);
                                 }
-                                callback(data, util.format("Current: %s | %s", current, (old.length > 0)? "Known as: " + old.toString().replace(/,/g, ", ") : "No other names"));
+                                callback(data, util.format("Current: %s | %s", current, (old.length > 0) ? "Known as: " + old.toString().replace(/,/g, ", ") : "No other names"));
                             }
                         });
                     }

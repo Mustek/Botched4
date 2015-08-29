@@ -2,6 +2,30 @@
 
 // Globals
 global.ERROR = {USAGE: 'UsageException'};
+global.COLOR = {
+    WHITE: '\u000300',
+    BLACK: '\u000301',
+    DARK_BLUE: '\u000302',
+    DARK_GREEN: '\u000303',
+    RED: '\u000304',
+    BROWN: '\u000305',
+    PURPLE: '\u000306',
+    OLIVE: '\u000307',
+    YELLOW: '\u000308',
+    GREEN: '\u000309',
+    TEAL: '\u000310',
+    CYAN: '\u000311',
+    BLUE: '\u000312',
+    MAGENTA: '\u000313',
+    DARK_GRAY: '\u000314',
+    DARK_GREY: '\u000314',
+    LIGHT_GRAY: '\u000315',
+    LIGHT_GREY: '\u000315',
+    RESET: '\u000f',
+    BOLD: '\u0002',
+    UNDERLINE: '\u001f',
+    ITALIC: '\u001D'
+};
 
 // Requires
 var readline = require('readline'); //Make console input usable

@@ -55,7 +55,7 @@ exports.onCommand = function (command, args, data, callback) {
                 var snippet = search_data.snippet.replace(/<(?:.|\n)*?>/gm, '');
                 snippet = (snippet.length <= 40) ? snippet : snippet.substring(0, 40) + "\u2026";
 
-                callback(data, util.format("%s - “%s” - %s%s", search_data.title, snippet.replace(/\s\s+/g, ' '), config[command + '_url_slug'], encodeURI(search_data.title)));
+                callback(data, util.format("%s - %s“%s”%s - %s%s", search_data.title, global.COLOR.ITALIC, snippet.replace(/\s\s+/g, ' '), global.COLOR.RESET, config[command + '_url_slug'], encodeURI(search_data.title)));
             }
 
 
