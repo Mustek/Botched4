@@ -1,0 +1,15 @@
+{
+  "name": "ADMIN",
+  "version": "1.0",
+  "description": "Botched tools",
+  "usage": "See available commands",
+
+  "commands": ["help", "join", "part", "nick", "say", "do", "quit"],
+  "permissions": {
+    "unaffiliated/mustek": 3
+  },
+
+  "config": {
+    "repo_url": "https://gitlab.com/imustek/Botched4"
+  }
+}
