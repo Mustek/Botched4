@@ -170,6 +170,7 @@ function loadPlugin(plugin) {
     };
 
     plugins[plugin.toLowerCase()].setConfig(manifest.config);
+    plugins[plugin.toLowerCase()].setPermissions(manifest.permissions);
 
     plugins[plugin.toLowerCase()].onLoad(plugins[plugin.toLowerCase()], function (data, error) {
         if (!error) {
@@ -194,7 +195,7 @@ function loadPlugin(plugin) {
 
 function startListeners() {
     // Incoming chat:
-    bot.on('message', function (sender, channel, message) {
+    bot.on('message', function (sender, channel, message, raw) {
         var identifier = new RegExp("^" + bot.nick + "[:,]", 'i'); //Bot regex
         logchat.trace(format("[%s] %s: %s", channel, sender, message));
 
@@ -214,7 +215,7 @@ function startListeners() {
         var args = message.trim().substr(0, end).split(' '); // Arguments
         args.splice(0, 1);
 
-        var data = {'sender': sender, 'channel': channel, 'command': cmd, 'fullMessage': message}; // Meta data
+        var data = {'sender': sender, 'host': raw.host, 'channel': channel, 'command': cmd, 'fullMessage': message}; // Meta data
 
         if (commands[cmd] !== undefined) {
 

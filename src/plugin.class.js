@@ -4,14 +4,13 @@
  Contains all required functions to operate a plugin
  **/
 
-var fs = require('fs');
-
 var pluginManager;
 var client;
 var logger;
 
 var plugin = null;
 var config = null;
+var permissions = null;
 
 exports.constructor = function (_pluginManager, callback) {
     pluginManager = _pluginManager;
@@ -45,6 +44,10 @@ exports.getConfig = function(){
     return config;
 };
 
+exports.getPermission = function(hostname){
+    return permissions[hostname];
+};
+
 /** Setters **/
 
 exports.setPluginManager = function (_pluginManager) {
@@ -65,4 +68,8 @@ exports.setData = function (_data) {
 
 exports.setConfig = function (_config) {
     config = _config;
+};
+
+exports.setPermissions = function (_permissions){
+    permissions = _permissions;
 };
