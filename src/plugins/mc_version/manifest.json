@@ -1,0 +1,14 @@
+{
+  "name": "MC Version Checker",
+  "version": "1.0",
+  "description": "Returns the latest version and announces new version",
+  "usage": "version",
+
+  "commands": ["version"],
+  "permissions": {},
+
+  "config": {
+    "version_url": "http://s3.amazonaws.com/Minecraft.Download/versions/versions.json",
+    "subscribers": ["##Mustek", "Mustek", "redstonehelper"]
+  }
+}
