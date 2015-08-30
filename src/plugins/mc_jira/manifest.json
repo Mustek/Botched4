@@ -1,0 +1,14 @@
+{
+  "name": "Jira",
+  "version": "1.0",
+  "description": "Jira bug lookup",
+  "usage": "jira [query]",
+
+  "commands": ["bug"],
+  "permissions": {},
+
+  "config": {
+    "jira_url_api": "https://bugs.mojang.com/rest/api/2/issue/{query}?fields=summary,fixVersions,resolution,issuelinks",
+    "jira_url_slug": "https://bugs.mojang.com/browse/"
+  }
+}
