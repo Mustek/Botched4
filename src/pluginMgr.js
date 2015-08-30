@@ -1,39 +1,3 @@
-/**
- Plans:
-
- == Actions
- - Read plugins directory
- - Start plugins on boot
- - Ability to start/reload/stop plugins (Hotplugging)
- - Handle all interactivity bCore <> plugins (Especially chat)
- - Handle bot-admin commands (Plugin mgmt, quit, join/part) - Stuff that directly interfaces with the bot/plugins
-
- == Variables
- - Plugins {Object} = name:{publicName, ver, shortDescription, HowtoUse}
- - Keywords = {keyword:plugin} - Triggers the plugin
-
- == Bot 'flowchat'
- * Start own functions
- * Connect to IRC
- ** On connect: Start plugin manager
- ** On error: Try again
- ** On 3rd error: Stop everything, quit
- * MGR: Start plugins
- * Idle until close
-
- == Plugin 'flowchart'
- * MSG: .test
- * MGR: Search keywords
- * MGR: Hit keyword, alert plugin (Send: channel, nick, cmd, arguments, raw, CALLBACK)
- * PLG: Do stuff, return callback:
- ** Example chat message: (Error: <null>, Type: message, Rcpt: <chan/usr>, Message: <msg>) - Spit out in chat
- ** Example Do message: (Error: <null>, Type: do, Rcpt: <chan/user>, Message: <msg>) - Spit an action in chat
- ** Example null message: (null) - Do absolutely nothing
- ** Example error: (Error: <!null>, Err: <Errmsg>) - Error happened, let user know
- * MGR: Do action based on about callback objects
- * - Begin again -
- **/
-
 var oop = require('oop-module');
 var fs = require('fs');
 var format = require('util').format;
@@ -200,8 +164,8 @@ function startListeners() {
         logchat.trace(format("[%s] %s: %s", channel, sender, message));
 
 
-        if (message[0] == ',') { //Todo: Pull from config file
-            message = message.replace(",", "").trim();
+        if (message[0] == '.') { //Todo: Pull from config file
+            message = message.replace(".", "").trim();
             // continue
         } else if (message.split(" ")[0].toLowerCase().match(identifier) != null) {
             message = message.replace(identifier, "").trim();
