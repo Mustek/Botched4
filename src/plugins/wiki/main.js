@@ -1,5 +1,5 @@
 /***
- WIKI PLUGIN FOR BOTCHEDv4
+ PING PLUGIN FOR BOTCHEDv4
  ***/
 
 var plugin = null; //Data, includes name, version and description.
