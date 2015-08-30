@@ -60,6 +60,10 @@ exports.onCommand = function (command, args, data, callback) {
             answer = 'wees on ' + target;
             type = 'self';
             break;
+        case 'support':
+            answer = 'Network: irc.esper.net, Channel #minecrafthelp - Quick connect: http://webchat.esper.net/?channels=minecrafthelp';
+            break;
+
     }
 
     callback(data, answer, (type == 'self'));
