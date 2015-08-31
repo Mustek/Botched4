@@ -2,6 +2,7 @@
 
 var defaults = {
     timeout: 5000,  // 15 seconds
+    pool: false,    // Prevent sockets piling up, hopefully
     headers: {
         'user-agent': 'Botched v4 // Made by Mustek // Found on Freenode'
     }
