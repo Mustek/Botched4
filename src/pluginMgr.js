@@ -210,7 +210,7 @@ function startListeners() {
             var message = "";
 
 
-            if (data.target !== null) {
+            if (data.target !== null && !is_self) {
                 message += data.target + ": ";
             }
 
