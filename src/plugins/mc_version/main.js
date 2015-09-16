@@ -26,7 +26,6 @@ exports.onLoad = function (data, callback) {
     config = _super.getConfig();
     _super.setData(data);
 
-    setInterval(updateVersion, 15 * 1000);
     updateVersion();
 
     callback(data);
@@ -51,6 +50,7 @@ var updateVersion = function () {
                     etag = response.etag;
                 }
             }
+            setTimeout(updateVersion, (15 + Math.floor((Math.random()*3)))*1000);
         })
     };
 
@@ -88,7 +88,6 @@ var updateVersion = function () {
 
     check_etag();
 
-
 };
 
 
@@ -106,7 +105,7 @@ var lookup_version = function (callback) {
 };
 
 var lookup_etag = function (callback) {
-    request.head(config['version_url'], function (error, response) {
+    request({method: 'HEAD', timeout: 8000, url: config['version_url']}, function (error, response) {
         if (error || response.statusCode != 200) {
             callback(error, null);
         } else {
