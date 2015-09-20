@@ -52,7 +52,7 @@ var lookup_status = function (callback) {
 
     request(config['status_url'], function (error, response, body) {
         if (error || response.statusCode != 200) {
-            callback(error, null, query);
+            callback(error, null);
         } else if (!JSON.parse(body)) {
             callback("No query entered", null);
         } else {
