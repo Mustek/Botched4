@@ -95,7 +95,7 @@ var lookup_version = function (callback) {
 
     request(config['version_url'], function (error, response, body) {
         if (error || response.statusCode != 200) {
-            callback(error, null, query);
+            callback(error, null);
         } else if (!JSON.parse(body)) {
             callback("Something went wrong whilst obtaining versions", null);
         } else {
