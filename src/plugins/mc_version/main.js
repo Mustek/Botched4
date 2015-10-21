@@ -44,7 +44,7 @@ var updateVersion = function () {
             if (error) {
                 logger.warn("[MC_Version] Error in etag lookup: " + error.code);
             } else {
-                if (response.etag != etag) {
+                if (response && response.etag != etag) {
                     logger.debug('Updated etag detected.');
                     get_versions();
                     etag = response.etag;
