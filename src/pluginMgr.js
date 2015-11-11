@@ -181,10 +181,15 @@ function startListeners() {
 
         var data = {'sender': sender, 'host': raw.host, 'channel': channel, 'command': cmd, 'fullMessage': message}; // Meta data
 
+        // If the message was sent to the bot, reply to the sender instead.
+        if(data.channel.toLowerCase() === bot.nick.toLowerCase()){
+            data.channel = data.sender;
+        }
+
         if (commands[cmd] !== undefined) {
 
             // This grabs the characters after the @
-            data['target'] = (message.lastIndexOf('@') >= 0 ) ? message.substr(message.indexOf('@') + 1) : null;
+            data['target'] = (message.lastIndexOf(' @') >= 0 ) ? message.substr(message.indexOf(' @') + 1) : null;
             plugins[commands[cmd]].onCommand(cmd, args, data, send_chat);
         }
     });
