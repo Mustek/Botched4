@@ -164,8 +164,8 @@ function startListeners() {
         logchat.trace(format("[%s] %s: %s", channel, sender, message));
 
 
-        if (message[0] == '.') { //Todo: Pull from config file
-            message = message.replace(".", "").trim();
+        if (message[0] == ',') { //Todo: Pull from config file
+            message = message.replace(",", "").trim();
             // continue
         } else if (message.split(" ")[0].toLowerCase().match(identifier) != null) {
             message = message.replace(identifier, "").trim();
@@ -189,7 +189,7 @@ function startListeners() {
         if (commands[cmd] !== undefined) {
 
             // This grabs the characters after the @
-            data['target'] = (message.lastIndexOf(' @') >= 0 ) ? message.substr(message.indexOf(' @') + 1) : null;
+            data['target'] = (message.lastIndexOf(' @') >= 0 ) ? message.substr(message.indexOf(' @') + 2) : null;
             plugins[commands[cmd]].onCommand(cmd, args, data, send_chat);
         }
     });
