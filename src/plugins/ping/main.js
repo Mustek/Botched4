@@ -63,6 +63,9 @@ exports.onCommand = function (command, args, data, callback) {
         case 'support':
             answer = 'Network: irc.esper.net, Channel #minecrafthelp - Quick connect: http://webchat.esper.net/?channels=minecrafthelp';
             break;
+        case 'ads':
+            answer = 'This channel can not be used for advertising. Please visit /r/minecraftbuddies or /r/mcservers';
+            break;
 
     }
 
