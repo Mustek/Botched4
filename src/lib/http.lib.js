@@ -1,8 +1,7 @@
 // This fixes the open sockets bug found in Botched3 by forcing a timeout
 
 var defaults = {
-    timeout: 5000,  // 15 seconds
-    pool: false,    // Prevent sockets piling up, hopefully
+    timeout: 5000,  // 5 seconds
     headers: {
         'user-agent': 'Botched v4 // Made by Mustek // Found on Freenode'
     }
